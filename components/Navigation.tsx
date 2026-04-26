@@ -1,20 +1,24 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Dashboards', href: '#dataviz' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Education', href: '#education' },
-  { label: 'Contact', href: '#contact' },
-]
+import { useLanguage } from '@/context/LanguageContext'
+import { translations } from '@/lib/translations'
 
 export default function Navigation() {
+  const { lang, setLang } = useLanguage()
+  const t = translations[lang].nav
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const navItems = [
+    { label: t.about, href: '#about' },
+    { label: t.skills, href: '#skills' },
+    { label: t.experience, href: '#experience' },
+    { label: t.dashboards, href: '#dataviz' },
+    { label: t.projects, href: '#projects' },
+    { label: t.education, href: '#education' },
+    { label: t.contact, href: '#contact' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -48,7 +52,7 @@ export default function Navigation() {
           </button>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {navItems.map((item) => (
               <button
                 key={item.href}
@@ -58,6 +62,23 @@ export default function Navigation() {
                 {item.label}
               </button>
             ))}
+
+            {/* Lang switcher */}
+            <div className="flex items-center gap-1 ml-2 border border-slate-700/50 rounded-full p-0.5">
+              {(['fr', 'en'] as const).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`font-mono text-[11px] tracking-widest px-2.5 py-1 rounded-full transition-all duration-200 ${
+                    lang === l
+                      ? 'bg-cyan-400 text-[#05080F] font-bold'
+                      : 'text-slate-500 hover:text-slate-300'
+                  }`}
+                >
+                  {l.toUpperCase()}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Hamburger */}
@@ -66,21 +87,9 @@ export default function Navigation() {
             className="md:hidden flex flex-col gap-[5px] p-2 z-50 relative"
             aria-label="Toggle menu"
           >
-            <span
-              className={`w-5 h-px bg-cyan-400 transition-all duration-300 origin-center ${
-                menuOpen ? 'rotate-45 translate-y-[6px]' : ''
-              }`}
-            />
-            <span
-              className={`w-5 h-px bg-cyan-400 transition-all duration-300 ${
-                menuOpen ? 'opacity-0 scale-x-0' : ''
-              }`}
-            />
-            <span
-              className={`w-5 h-px bg-cyan-400 transition-all duration-300 origin-center ${
-                menuOpen ? '-rotate-45 -translate-y-[6px]' : ''
-              }`}
-            />
+            <span className={`w-5 h-px bg-cyan-400 transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
+            <span className={`w-5 h-px bg-cyan-400 transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
+            <span className={`w-5 h-px bg-cyan-400 transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
           </button>
         </div>
       </motion.nav>
@@ -93,7 +102,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-[#05080F]/97 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
+            className="fixed inset-0 z-40 bg-[#05080F]/97 backdrop-blur-2xl flex flex-col items-center justify-center gap-8"
           >
             {navItems.map((item, i) => (
               <motion.button
@@ -108,6 +117,21 @@ export default function Navigation() {
                 {item.label}
               </motion.button>
             ))}
+
+            {/* Lang switcher mobile */}
+            <div className="flex items-center gap-2 border border-slate-700/50 rounded-full p-1 mt-2">
+              {(['fr', 'en'] as const).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`font-mono text-sm tracking-widest px-4 py-1.5 rounded-full transition-all ${
+                    lang === l ? 'bg-cyan-400 text-[#05080F] font-bold' : 'text-slate-500'
+                  }`}
+                >
+                  {l.toUpperCase()}
+                </button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

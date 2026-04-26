@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Syne, Fira_Code, DM_Sans } from 'next/font/google'
+import { LanguageProvider } from '@/context/LanguageContext'
 import './globals.css'
 
 const syne = Syne({
@@ -33,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${syne.variable} ${firaCode.variable} ${dmSans.variable}`}>
       <body className="antialiased">
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   )
