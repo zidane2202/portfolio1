@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Download } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 
@@ -63,8 +64,15 @@ export default function Navigation() {
               </button>
             ))}
 
+            {/* CV download */}
+            <a href="/CV_Zidane_Sontia.pdf" download
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-700/50 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-all duration-200 text-xs font-mono">
+              <Download size={11} />
+              CV
+            </a>
+
             {/* Lang switcher */}
-            <div className="flex items-center gap-1 ml-2 border border-slate-700/50 rounded-full p-0.5">
+            <div className="flex items-center gap-1 ml-1 border border-slate-700/50 rounded-full p-0.5">
               {(['fr', 'en'] as const).map((l) => (
                 <button
                   key={l}

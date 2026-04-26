@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react'
+import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 
@@ -129,6 +129,14 @@ export default function Hero() {
           >
             {t.cta2}
           </button>
+          <a
+            href="/CV_Zidane_Sontia.pdf"
+            download
+            className="flex items-center gap-2 px-7 py-3 border border-slate-700/50 text-slate-400 font-display font-bold rounded-full text-sm hover:border-slate-500 hover:text-slate-200 transition-all duration-300 hover:scale-105 active:scale-95"
+          >
+            <Download size={15} />
+            {t.cta3}
+          </a>
         </motion.div>
 
         {/* Socials */}

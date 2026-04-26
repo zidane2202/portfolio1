@@ -17,6 +17,7 @@ export const translations = {
       location: 'Yaoundé, Cameroun',
       cta1: 'Mes Projets',
       cta2: 'Me Contacter',
+      cta3: 'Télécharger CV',
       scroll: 'DÉFILER',
     },
     about: {
@@ -161,6 +162,7 @@ export const translations = {
       location: 'Yaoundé, Cameroon',
       cta1: 'My Projects',
       cta2: 'Contact Me',
+      cta3: 'Download CV',
       scroll: 'SCROLL',
     },
     about: {
