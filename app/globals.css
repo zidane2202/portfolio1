@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #05080F;
+  --bg-card: #0D1B2A;
+  --cyan: #00D4FF;
+  --purple: #A78BFA;
+  --border: rgba(0, 212, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: #f1f5f9;
+  font-family: var(--font-dm), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+
+/* Selection */
+::selection { background: rgba(0, 212, 255, 0.25); color: #fff; }
+
+/* Grid background pattern */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00D4FF 0%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card */
+.card-glass {
+  background: rgba(13, 27, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 212, 255, 0.08);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-glass:hover {
+  border-color: rgba(0, 212, 255, 0.25);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.08), 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Glow */
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.35);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+/* Hover underline */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--cyan);
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after { width: 100%; }
+
+/* Section label */
+.section-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #00D4FF;
+  text-transform: uppercase;
+}
+
+/* Section heading */
+.section-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #f1f5f9;
+  line-height: 1.1;
+}
+
+/* Timeline vertical line */
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(0, 212, 255, 0.4), transparent);
+}
