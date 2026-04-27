@@ -5,12 +5,12 @@ import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 
 const colors = [
+  { dot: 'bg-amber-400', badge: 'bg-amber-500/10 border-amber-500/20 text-amber-300' },
   { dot: 'bg-emerald-400', badge: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300' },
-  { dot: 'bg-cyan-400', badge: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-300' },
+  { dot: 'bg-sky-400', badge: 'bg-sky-500/10 border-sky-500/20 text-sky-300' },
   { dot: 'bg-purple-400', badge: 'bg-purple-500/10 border-purple-500/20 text-purple-300' },
   { dot: 'bg-blue-400', badge: 'bg-blue-500/10 border-blue-500/20 text-blue-300' },
   { dot: 'bg-rose-400', badge: 'bg-rose-500/10 border-rose-500/20 text-rose-300' },
-  { dot: 'bg-amber-400', badge: 'bg-amber-500/10 border-amber-500/20 text-amber-300' },
 ]
 
 export default function Skills() {
@@ -26,7 +26,7 @@ export default function Skills() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-16">
           <p className="section-label mb-3">{t.label}</p>
           <h2 className="section-heading">{t.title}</h2>
-          <div className="mt-4 w-10 h-px bg-gradient-to-r from-cyan-400 to-transparent" />
+          <div className="mt-4 w-10 h-px bg-gradient-to-r from-amber-400 to-transparent" />
         </motion.div>
 
         <div className="space-y-10">
