@@ -1,16 +1,17 @@
 'use client'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ExternalLink, Monitor, Smartphone, Server, Code2, Globe } from 'lucide-react'
+import Link from 'next/link'
+import { ExternalLink, Monitor, Smartphone, Server, Globe, Leaf, School } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 
 const projectsMeta = [
+  { Icon: Leaf, href: 'https://agri-scan-cm.vercel.app', tech: ['Next.js', 'FastAPI', 'EfficientNetB3', 'TensorFlow.js', 'ChromaDB', 'Claude', 'Mapbox', 'Vercel', 'Hugging Face'], accent: { text: 'text-lime-400', bg: 'bg-lime-500/10', border: 'border-lime-500/20', iconBg: 'bg-lime-500/10', glow: 'hover:shadow-lime-500/15' }, period: '2026 · Projet de fin d\'études' },
   { Icon: Globe, href: 'https://iag-academy.com', tech: ['Next.js', 'TypeScript', 'Supabase', 'API Anthropic', 'Whisper', 'Groq'], accent: { text: 'text-amber-400', bg: 'bg-amber-500/10', border: 'border-amber-500/20', iconBg: 'bg-amber-500/10', glow: 'hover:shadow-amber-500/15' }, period: 'Février 2026 – En cours' },
+  { Icon: School, href: 'https://nexa-edu.com/', pageHref: '/projets/nexa', tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'LiveKit', 'PWA', 'OpenAI', 'Anthropic', 'Groq'], accent: { text: 'text-sky-400', bg: 'bg-sky-500/10', border: 'border-sky-500/20', iconBg: 'bg-sky-500/10', glow: 'hover:shadow-sky-500/15' }, period: '2026 · En cours' },
   { Icon: Monitor, href: 'https://kaeyros-analytics.com', tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'], accent: { text: 'text-cyan-400', bg: 'bg-cyan-500/10', border: 'border-cyan-500/20', iconBg: 'bg-cyan-500/10', glow: 'hover:shadow-cyan-500/15' }, period: '09/2025 – 10/2025' },
   { Icon: Smartphone, href: null, tech: ['React Native', 'React.js', 'AI Integration', 'Push Notifications'], accent: { text: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/20', iconBg: 'bg-purple-500/10', glow: 'hover:shadow-purple-500/15' }, period: '04/2025 – 05/2025' },
-  { Icon: Code2, href: null, tech: ['FastAPI', 'Python', 'Pydantic', 'UUID', 'PostgreSQL'], accent: { text: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', iconBg: 'bg-emerald-500/10', glow: 'hover:shadow-emerald-500/15' }, period: '2025' },
-  { Icon: Server, href: null, tech: ['PHP', 'MySQL', 'Bootstrap 5', 'PHPMailer', 'PDF'], accent: { text: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/20', iconBg: 'bg-blue-500/10', glow: 'hover:shadow-blue-500/15' }, period: '2025' },
   { Icon: Server, href: null, tech: ['C#', 'PHP', 'VBA Excel', 'SQL', 'PDF Generation'], accent: { text: 'text-rose-400', bg: 'bg-rose-500/10', border: 'border-rose-500/20', iconBg: 'bg-rose-500/10', glow: 'hover:shadow-rose-500/15' }, period: '12/2024 – 02/2025' },
 ]
 
@@ -51,6 +52,11 @@ export default function Projects() {
                 <h3 className="font-display font-bold text-slate-100 text-xl mb-1">{item.title}</h3>
                 <p className="font-mono text-[11px] text-slate-600 mb-3">{meta.period}</p>
                 <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-5">{item.description}</p>
+                {'pageHref' in meta && meta.pageHref && (
+                  <Link href={meta.pageHref} className={`mb-4 inline-flex text-xs font-mono tracking-wide ${meta.accent.text} hover:underline`}>
+                    {t.readMore}
+                  </Link>
+                )}
                 <div className="flex flex-wrap gap-1.5">
                   {meta.tech.map((tag) => (
                     <span key={tag} className={`px-2 py-0.5 rounded text-xs border ${meta.accent.bg} ${meta.accent.border} ${meta.accent.text}`}>{tag}</span>

@@ -1,7 +1,7 @@
 'use client'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { MapPin, GraduationCap, Languages, Sparkles } from 'lucide-react'
+import { GraduationCap, Languages, Sparkles } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 
@@ -12,7 +12,7 @@ const stats = [
   { value: '5' },
 ]
 
-const pillIcons = [MapPin, GraduationCap, Languages, Sparkles]
+const pillIcons = [Sparkles, GraduationCap, Languages]
 
 export default function About() {
   const ref = useRef<HTMLElement>(null)

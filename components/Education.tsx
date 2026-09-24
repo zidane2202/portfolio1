@@ -33,7 +33,7 @@ export default function Education() {
               return (
                 <div key={item.degree} className="relative">
                   <div className={`absolute -left-12 top-6 w-[15px] h-[15px] rounded-full border-2 flex items-center justify-center bg-[#05080F] ${isCurrent ? 'border-cyan-400' : 'border-slate-700'}`}>
-                    <div className={`w-[5px] h-[5px] rounded-full ${isCurrent ? 'bg-cyan-400 animate-pulse-glow' : 'bg-slate-600'}`} />
+                    <div className={`w-[5px] h-[5px] rounded-full ${isCurrent ? 'bg-cyan-400' : 'bg-slate-600'}`} />
                   </div>
                   <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: i * 0.12, duration: 0.55 }}
                     className={`card-glass rounded-xl p-5 flex gap-4 items-start ${isCurrent ? 'border-cyan-500/20' : ''}`}>
@@ -53,7 +53,7 @@ export default function Education() {
                       </div>
                       {isCurrent && (
                         <div className="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
-                          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
                           <span className="font-mono text-cyan-400 text-[11px] tracking-wide">{t.ongoing}</span>
                         </div>
                       )}

@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
 
   try {
     await transporter.sendMail({
-      from: `"Portfolio — Zidane Sontia" <${process.env.GMAIL_USER}>`,
+      from: `"Portfolio · Zidane Sontia" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
       replyTo: email,
       subject: `[Portfolio] Message de ${name}`,
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
             <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; color: #0f172a; line-height: 1.6; white-space: pre-wrap;">${message}</div>
           </div>
           <p style="margin-top: 24px; color: #94a3b8; font-size: 12px;">
-            Tu peux répondre directement à cet email — la réponse ira à ${email}
+            Tu peux répondre directement à cet email. La réponse ira à ${email}
           </p>
         </div>
       `,

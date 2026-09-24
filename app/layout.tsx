@@ -25,8 +25,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Zidane Sontia — Portfolio',
-  description: 'Étudiant en Intelligence Artificielle & Big Data · Développeur Full Stack · Yaoundé, Cameroun',
+  title: 'Zidane Sontia · Portfolio',
+  description: 'Licence en Intelligence Artificielle & Big Data · Développeur Full Stack · Yaoundé, Cameroun',
   keywords: ['Zidane Sontia', 'Portfolio', 'AI', 'Big Data', 'Next.js', 'React', 'Cameroun'],
 }
 
