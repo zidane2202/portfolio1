@@ -5,9 +5,9 @@
 :root {
   --bg: #05080F;
   --bg-card: #0D1B2A;
-  --amber: #F59E0B;
+  --cyan: #00D4FF;
   --purple: #A78BFA;
-  --border: rgba(245, 158, 11, 0.12);
+  --border: rgba(0, 212, 255, 0.12);
 }
 
 * {
@@ -30,22 +30,22 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
 
 /* Selection */
-::selection { background: rgba(245, 158, 11, 0.25); color: #fff; }
+::selection { background: rgba(0, 212, 255, 0.25); color: #fff; }
 
 /* Grid background pattern */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(245, 158, 11, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 158, 11, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #F59E0B 0%, #F97316 50%, #EF4444 100%);
+  background: linear-gradient(135deg, #00D4FF 0%, #A78BFA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -55,23 +55,23 @@ body {
 .card-glass {
   background: rgba(13, 27, 42, 0.65);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(0, 212, 255, 0.08);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card-glass:hover {
-  border-color: rgba(245, 158, 11, 0.22);
-  box-shadow: 0 0 40px rgba(245, 158, 11, 0.07), 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 212, 255, 0.25);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.08), 0 20px 40px rgba(0, 0, 0, 0.4);
   transform: translateY(-3px);
 }
 
 /* Glow */
-.glow-amber {
-  box-shadow: 0 0 24px rgba(245, 158, 11, 0.40);
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.35);
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
 /* Hover underline */
@@ -85,7 +85,7 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--amber);
+  background: var(--cyan);
   transition: width 0.3s ease;
 }
 .link-underline:hover::after { width: 100%; }
@@ -95,7 +95,7 @@ body {
   font-family: 'Fira Code', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  color: #F59E0B;
+  color: #00D4FF;
   text-transform: uppercase;
 }
 
@@ -115,5 +115,5 @@ body {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, rgba(245, 158, 11, 0.45), transparent);
+  background: linear-gradient(to bottom, rgba(0, 212, 255, 0.4), transparent);
 }
