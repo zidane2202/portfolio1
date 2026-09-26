@@ -118,7 +118,7 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-4 mb-14"
         >
           <button
-            onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.querySelector('#dataviz')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-7 py-3 bg-cyan-400 text-[#05080F] font-display font-bold rounded-full text-sm hover:bg-cyan-300 transition-all duration-300 glow-cyan hover:scale-105 active:scale-95"
           >
             {t.cta1}

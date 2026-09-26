@@ -1,7 +1,7 @@
 'use client'
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { X, ChevronLeft, ChevronRight, ExternalLink, BarChart2, TrendingUp } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight, ExternalLink, BarChart2, TrendingUp, Leaf } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
@@ -75,6 +75,8 @@ export default function DataViz() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
   const { lang } = useLanguage()
   const t = translations[lang].dataviz
+  const agri = translations[lang].projects.items[0]
+  const visit = translations[lang].projects.visit
   const [lightbox, setLightbox] = useState<{ meta: DashboardMeta; index: number } | null>(null)
 
   const openLightbox = (meta: DashboardMeta, index = 0) => {
@@ -107,7 +109,56 @@ export default function DataViz() {
             <div className="mt-4 w-10 h-px bg-gradient-to-r from-cyan-400 to-transparent" />
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6">
+            <motion.article initial={{ opacity: 0, y: 36 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="card-glass rounded-2xl overflow-hidden group hover:shadow-2xl hover:shadow-lime-500/15 transition-all duration-300">
+              <a href="https://agri-scan-cm.vercel.app" target="_blank" rel="noreferrer" aria-label={`${visit} ${agri.title}`}
+                className="relative block w-full aspect-video overflow-hidden bg-slate-900">
+                <iframe
+                  src="https://agri-scan-cm.vercel.app"
+                  title={agri.title}
+                  loading="lazy"
+                  tabIndex={-1}
+                  className="pointer-events-none absolute top-0 left-0 h-[400%] w-[400%] origin-top-left scale-[0.25]"
+                />
+                <span className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-mono text-white text-sm tracking-widest border border-white/30 px-4 py-2 rounded-full backdrop-blur-sm">
+                    {visit}
+                  </span>
+                </span>
+              </a>
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div>
+                    <p className="font-mono text-xs tracking-widest mb-1 text-lime-400">2026 · {lang === 'fr' ? "Projet de fin d'études" : 'Final-year project'}</p>
+                    <h3 className="font-display font-bold text-slate-100 text-lg leading-tight">{agri.title}</h3>
+                  </div>
+                  <div className="p-2.5 rounded-xl flex-shrink-0 bg-lime-500/10">
+                    <Leaf size={18} className="text-lime-400" />
+                  </div>
+                </div>
+                <p className="text-slate-400 text-sm leading-relaxed mb-4">{agri.description}</p>
+                <div className="mb-4 space-y-1.5">
+                  {t.agriInsights.map((insight) => (
+                    <div key={insight} className="flex items-start gap-2 text-xs text-slate-400">
+                      <span className="mt-0.5 flex-shrink-0 text-lime-400">✓</span>
+                      {insight}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {['Next.js', 'FastAPI', 'EfficientNetB3', 'TensorFlow.js', 'ChromaDB'].map((tag) => (
+                    <span key={tag} className="px-2 py-0.5 rounded text-xs border bg-lime-500/10 border-lime-500/20 text-lime-400">{tag}</span>
+                  ))}
+                </div>
+                <a href="https://agri-scan-cm.vercel.app" target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-lime-400 hover:opacity-80 transition-colors">
+                  <ExternalLink size={14} />
+                  {visit}
+                </a>
+              </div>
+            </motion.article>
             {dashboardsMeta.map((db, i) => {
               const td = t.dashboards[i]
               return (

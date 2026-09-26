@@ -7,7 +7,7 @@ import { translations } from '@/lib/translations'
 
 const stats = [
   { value: '3+' },
-  { value: '6+' },
+  { value: '7+' },
   { value: '20+' },
   { value: '5' },
 ]
