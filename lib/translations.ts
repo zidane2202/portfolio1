@@ -18,7 +18,6 @@ export const translations = {
       cta1: 'Mes Projets',
       cta2: 'Me Contacter',
       cta3: 'Télécharger CV',
-      scroll: 'DÉFILER',
     },
     about: {
       label: '01 · Qui Suis-Je',
@@ -56,12 +55,22 @@ export const translations = {
       current: 'En cours',
       jobs: [
         {
-          title: 'Développeur Full Stack',
+          title: 'Développeur IA',
           period: 'Février 2026 – En cours',
           bullets: [
             "Développement et déploiement d'une plateforme web de préparation au TCF Canada",
             "Intégration de fonctionnalités IA : correction automatique et simulateur oral (Whisper/Groq)",
             "Déploiement Vercel et optimisation des performances en production",
+          ],
+        },
+        {
+          title: 'Junior Data Analyst',
+          period: '18 mai 2026 – 18 juillet 2026',
+          bullets: [
+            "Conception d'agents IA conversationnels (n8n) pour automatiser des parcours métier : assurance, rendez-vous médicaux, support client",
+            "Agent générant et exécutant des requêtes SQL à partir de demandes en langage naturel, avec visualisations et export PDF/Excel, en remplacement de Power BI",
+            "Développement d'un module CRM : prospection terrain, relance client et WhatsApp",
+            "Création d'APIs Python pour des applications internes, connectées aux chatbots pour l'accès aux données",
           ],
         },
         {
@@ -205,7 +214,6 @@ export const translations = {
       cta1: 'My Projects',
       cta2: 'Contact Me',
       cta3: 'Download CV',
-      scroll: 'SCROLL',
     },
     about: {
       label: '01 · Who I Am',
@@ -243,12 +251,22 @@ export const translations = {
       current: 'Ongoing',
       jobs: [
         {
-          title: 'Full Stack Developer',
+          title: 'AI Developer',
           period: 'February 2026 – Present',
           bullets: [
             "Development and deployment of a TCF Canada exam preparation web platform",
             "AI features integration: automatic correction and oral simulator (Whisper/Groq)",
             "Vercel deployment and production performance optimization",
+          ],
+        },
+        {
+          title: 'Junior Data Analyst',
+          period: 'May 18, 2026 – July 18, 2026',
+          bullets: [
+            "Designed conversational AI agents (n8n) to automate business flows: insurance, medical appointments and customer support",
+            "Agent that generates and runs SQL from natural-language requests, with visualizations and automatic PDF/Excel export, replacing Power BI",
+            "Built a CRM module: field prospecting, customer follow-up and WhatsApp",
+            "Created Python APIs for internal apps, also connected to the chatbots for data access",
           ],
         },
         {

@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react'
+import { Github, Linkedin, Mail, Download } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 
@@ -153,16 +153,6 @@ export default function Hero() {
           ))}
         </motion.div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.button
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }}
-        onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-600 hover:text-cyan-400 transition-colors"
-      >
-        <span className="font-mono text-[10px] tracking-[0.25em]">{t.scroll}</span>
-        <ChevronDown size={14} className="animate-bounce" />
-      </motion.button>
     </section>
   )
 }

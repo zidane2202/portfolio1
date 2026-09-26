@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Syne, Fira_Code, DM_Sans } from 'next/font/google'
 import { LanguageProvider } from '@/context/LanguageContext'
 import './globals.css'
@@ -32,8 +33,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${syne.variable} ${firaCode.variable} ${dmSans.variable}`}>
+    <html lang="fr" className={`${syne.variable} ${firaCode.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <body className="antialiased">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}`}
+        </Script>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

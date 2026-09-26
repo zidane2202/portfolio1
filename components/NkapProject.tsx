@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
+import ThemeToggle from '@/components/ThemeToggle'
 
 const stack = ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'Vercel', 'PWA']
 
@@ -19,6 +20,7 @@ export default function NkapProject() {
             <ArrowLeft size={14} />
             {t.back}
           </Link>
+          <div className="flex items-center gap-3">
           <div className="flex items-center gap-1 border border-slate-700/50 rounded-full p-0.5">
             {(['fr', 'en'] as const).map((l) => (
               <button
@@ -31,6 +33,8 @@ export default function NkapProject() {
                 {l.toUpperCase()}
               </button>
             ))}
+          </div>
+          <ThemeToggle />
           </div>
         </div>
 

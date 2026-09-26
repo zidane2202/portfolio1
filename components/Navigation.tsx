@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Download } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
+import ThemeToggle from '@/components/ThemeToggle'
 
 export default function Navigation() {
   const { lang, setLang } = useLanguage()
@@ -87,18 +88,21 @@ export default function Navigation() {
                 </button>
               ))}
             </div>
+            <ThemeToggle />
           </div>
 
-          {/* Hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden flex flex-col gap-[5px] p-2 z-50 relative"
-            aria-label="Toggle menu"
-          >
+          <div className="md:hidden flex items-center gap-1 relative z-50">
+            <ThemeToggle />
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex flex-col gap-[5px] p-2 z-50 relative"
+              aria-label="Toggle menu"
+            >
             <span className={`w-5 h-px bg-cyan-400 transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
             <span className={`w-5 h-px bg-cyan-400 transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
             <span className={`w-5 h-px bg-cyan-400 transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
-          </button>
+            </button>
+          </div>
         </div>
       </motion.nav>
 

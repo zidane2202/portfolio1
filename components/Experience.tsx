@@ -7,6 +7,7 @@ import { translations } from '@/lib/translations'
 
 const companies = [
   { company: 'IAG Academy', href: 'https://iag-academy.com', location: 'Yaoundé, Cameroun', current: true, tags: ['Next.js', 'TypeScript', 'Supabase', 'API Anthropic', 'Whisper', 'Vercel'] },
+  { company: 'Kaeyros-Analytics', href: 'https://kaeyros-analytics.com', location: 'Yaoundé, Cameroun', current: false, tags: ['n8n', 'SQL', 'Python', 'CRM'] },
   { company: 'Kaeyros-Analytics', href: 'https://kaeyros-analytics.com', location: 'Yaoundé, Cameroun', current: false, tags: ['Next.js', 'React', 'TypeScript', 'Testing', 'QA'] },
 ]
 
