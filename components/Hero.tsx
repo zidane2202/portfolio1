@@ -36,7 +36,7 @@ export default function Hero() {
   }, [displayed, deleting, roleIndex, t.roles])
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section id="hero" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-32 pb-16 md:items-center md:pt-16 md:pb-0">
       <div className="absolute inset-0 bg-grid opacity-60" />
       <div className="absolute top-[20%] left-[15%] w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[15%] right-[10%] w-[400px] h-[400px] rounded-full bg-purple-500/6 blur-[100px] pointer-events-none" />
@@ -48,16 +48,16 @@ export default function Hero() {
         <div key={cls} className={`absolute w-10 h-10 ${cls} border-cyan-500/20`} />
       ))}
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 mb-10"
+          className="inline-flex max-w-full items-center gap-1.5 px-2.5 py-1.5 sm:gap-2.5 sm:px-4 sm:py-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 mb-8 md:mb-10"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse-glow" />
-          <span className="font-mono text-cyan-400 text-xs tracking-[0.15em] uppercase">{t.badge}</span>
+          <span className="whitespace-nowrap font-mono text-cyan-400 uppercase tracking-[0.04em] sm:tracking-[0.15em]" style={{ fontSize: 'clamp(7.5px, 2.15vw, 0.75rem)' }}>{t.badge}</span>
         </motion.div>
 
         {/* Name */}
@@ -67,7 +67,7 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="font-display font-extrabold tracking-tight leading-[0.9]"
-            style={{ fontSize: 'clamp(4rem, 12vw, 9rem)' }}
+            style={{ fontSize: 'clamp(2.75rem, 12vw, 9rem)' }}
           >
             <span className="text-slate-100">Zidane</span>
           </motion.h1>
@@ -78,7 +78,7 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.45, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="font-display font-extrabold tracking-tight leading-[0.9]"
-            style={{ fontSize: 'clamp(4rem, 12vw, 9rem)' }}
+            style={{ fontSize: 'clamp(2.75rem, 12vw, 9rem)' }}
           >
             <span className="gradient-text">Sontia</span>
           </motion.h1>

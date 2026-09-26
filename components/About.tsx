@@ -9,7 +9,7 @@ const stats = [
   { value: '3+' },
   { value: '7+' },
   { value: '20+' },
-  { value: '5' },
+  { value: '6' },
 ]
 
 const pillIcons = [Sparkles, GraduationCap, Languages]

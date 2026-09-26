@@ -30,6 +30,7 @@ export const translations = {
       statsLabels: ["Années\nd'études", "Projets\nréalisés", "Technologies\nmaîtrisées", "Certifications\nobtenues"],
       certsLabel: '// CERTIFICATIONS',
       certs: [
+        'Claude 101, Anthropic',
         'Introduction to Generative AI Studio, Simplilearn',
         'SecNumacadémie, MOOC Cybersécurité (ANSSI)',
         'Computer Hardware Basics, Cisco Networking Academy',
@@ -226,6 +227,7 @@ export const translations = {
       statsLabels: ["Years\nof study", "Projects\ncompleted", "Technologies\nmastered", "Certifications\nearned"],
       certsLabel: '// CERTIFICATIONS',
       certs: [
+        'Claude 101, Anthropic',
         'Introduction to Generative AI Studio, Simplilearn',
         'SecNumacadémie, Cybersecurity MOOC (ANSSI)',
         'Computer Hardware Basics, Cisco Networking Academy',

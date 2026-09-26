@@ -15,7 +15,7 @@ export default function NexaProject() {
     <main className="relative min-h-screen">
       <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
       <div className="relative max-w-3xl mx-auto px-6 py-10">
-        <div className="flex items-center justify-between mb-16">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-16">
           <Link href="/#projects" className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-slate-400 hover:text-cyan-400 transition-colors">
             <ArrowLeft size={14} />
             {t.back}

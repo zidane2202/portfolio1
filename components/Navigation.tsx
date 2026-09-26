@@ -54,12 +54,12 @@ export default function Navigation() {
           </button>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden xl:flex items-center gap-5">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollTo(item.href)}
-                className="font-mono text-xs tracking-widest text-slate-400 hover:text-cyan-400 transition-colors link-underline"
+                className="whitespace-nowrap shrink-0 font-mono text-xs tracking-widest text-slate-400 hover:text-cyan-400 transition-colors link-underline"
               >
                 {item.label}
               </button>
@@ -91,7 +91,7 @@ export default function Navigation() {
             <ThemeToggle />
           </div>
 
-          <div className="md:hidden flex items-center gap-1 relative z-50">
+          <div className="xl:hidden flex items-center gap-1 relative z-50">
             <ThemeToggle />
             <button
               onClick={() => setMenuOpen(!menuOpen)}
